@@ -36,7 +36,6 @@ def current_date():
 
 # 5 - create a new string adding "New!" in front of a given string
 # If the given string begins with "New!" already then return the original string
-
 def add_new():
     string = input("Enter a string: ")
     first = string.split()
@@ -45,16 +44,68 @@ def add_new():
     else: 
         print("New! " + string)
 
-
 # Part 02
 
 # 1 - create a new string from a given string taking the last 3 characters and added at both the front and back 
 # The string length must be 3 or more, if not, the original string is returned.
-
-def concat_string():
+def last_three_char():
     concat = input("Enter a string: ")
     if len(concat) <= 3:
         print(concat)
     else:
         new = concat[-3:]
         print(new + concat + new)
+
+# 2 - extract the first half of a string of even length
+def first_half():
+    full = input("Enter a string: ")
+    l = len(full)
+    if l % 2 == 0:
+        print(full[:int(l/2):])
+    else: 
+        print(full)
+
+# 3 - concatenate two strings except their first character
+def concat():
+    a = input("Enter a string: ")
+    b = input("Enter another string: ")
+    print(a[1:] + b[1:])
+
+# 4 - Given two values, find out which one is nearest to 100
+def closest_hundred():
+    a = int(input("Enter a value: "))
+    b = int(input("Enter another value: "))
+    if a < 100:
+        c = 100 - a
+    else: 
+        c = a - 100
+    
+    if b < 100:
+        d = 100 - b
+    else: 
+        d = b - 100
+    
+    if c < d:
+        print(a)
+    else: 
+        print(b)
+
+# 5 - check a given string contains 2 to 4 occurrences of a specified character
+def check_specified():
+    string = input("Enter a string: ")
+    check = input("Enter a char: ")
+    count = 0
+
+    for i in string:
+        if i == check:
+            count += 1
+        else:
+            continue
+    if count in range(2,5):
+        print(check + " is repeated " + str(count) + " times")
+    elif count not in range(2, 5):
+        print(check + " is out of range")
+    else: 
+        print(check + " is not found")
+
+check_specified()
