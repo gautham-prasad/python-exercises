@@ -1,5 +1,6 @@
 import os, datetime 
 import random
+import math
 # Part 01
 
 # 1 - check two numbers and return true if one of the number is 100 or if the sum of the two numbers is 100
@@ -236,3 +237,23 @@ def vowels():
         if i in vow:
             count += 1
     print(count)
+
+# 3 - convert an amount to coins. 
+# Example input: 46 and possible coins 25, 10, 5, 2, 1 Output: 25, 10, 10, 1
+def greedy_coins():
+    amount = int(input("Enter an amount: "))
+    denomin = input("Enter comma separated values: ").split(',')
+    coins = sorted(map(int,denomin),reverse=True)
+    output = []
+    i = 0
+    while amount != 0:
+        if amount >= int(coins[i]):
+            amount -= int(coins[i])
+            output.append(coins[i])
+        else:
+            i += 1
+    print(','.join(map(str,output)))
+
+# 4 - extract unique characters from a string.
+
+# 5 - first not repeated character Example string: 'abacddbec' Expected output: 
