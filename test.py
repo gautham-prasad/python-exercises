@@ -1,6 +1,5 @@
-import os, datetime 
-import random
-import math
+import os, datetime, random
+
 # Part 01
 
 # 1 - check two numbers and return true if one of the number is 100 or if the sum of the two numbers is 100
@@ -269,3 +268,4 @@ def non_repeat_char():
         else:
             new.remove(str(i))
     print(new[0])
+
