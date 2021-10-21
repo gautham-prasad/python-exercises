@@ -254,6 +254,18 @@ def greedy_coins():
             i += 1
     print(','.join(map(str,output)))
 
-# 4 - extract unique characters from a string.
+# 4 - extract unique characters from a string
+def unique_characters():
+    string = input("Enter a string: ")
+    print("Unique Characters: "+','.join(sorted(set(string))))
 
-# 5 - first not repeated character Example string: 'abacddbec' Expected output: 
+# 5 - first not repeated character Example string: 'abacddbecf' Expected output: 'e'
+def non_repeat_char():
+    string = list(input("Enter a string: "))
+    new = []
+    for i in string:
+        if i not in new:
+            new.append(str(i))
+        else:
+            new.remove(str(i))
+    print(new[0])
